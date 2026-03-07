@@ -15,8 +15,8 @@
       packages = forAllSystems (system:
         let
           pkgs = nixpkgs.legacyPackages.${system};
-          tag = "v6.8.46";
-          commit = "5ebc58fab42735fa41765ab7184fd637667c6cec";
+          tag = "v6.8.46-0";
+          commit = "0c05131aebcdb35bec9637e129e2ea8f0a3b205b";
         in
         {
           default = pkgs.buildGoModule {
@@ -28,7 +28,7 @@
               rev = commit;
             };
 
-            vendorHash = "sha256-3h68+GSEvd7tcJOqTjV2KXBXZFX7AWg3r8K3zZe4DnI=";
+            vendorHash = "sha256-wSp5BiPrhnTcxkjOPGnfqTtLCVg6qgEbpQRvYjBua6Q=";
             subPackages = [ "cmd/server" ];
 
             ldflags = [
