@@ -15,8 +15,8 @@
       packages = forAllSystems (system:
         let
           pkgs = nixpkgs.legacyPackages.${system};
-          tag = "v7.2.99";
-          commit = "f8dffa0522c628c27970148319a50f25f0ffebdd";
+          tag = "v7.2.100";
+          commit = "27fc3169bb4eb0509e3aba7dde4ab80286b0ae65";
         in
         {
           default = pkgs.buildGoModule {
