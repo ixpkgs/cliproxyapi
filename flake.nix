@@ -1,7 +1,8 @@
 {
   inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
-  outputs = { nixpkgs, ... }:
+  outputs =
+    { nixpkgs, ... }:
     let
       systems = [
         "x86_64-linux"
@@ -12,11 +13,12 @@
       forAllSystems = nixpkgs.lib.genAttrs systems;
     in
     {
-      packages = forAllSystems (system:
+      packages = forAllSystems (
+        system:
         let
           pkgs = nixpkgs.legacyPackages.${system};
-          tag = "v7.2.156";
-          commit = "d1a024e9400bc65bd78ccd908945cf2eacc2835e";
+          tag = "v7.2.157";
+          commit = "09a29bd345bc44c473abe7fd07859e32df2ea543";
         in
         {
           default = pkgs.buildGoModule {
@@ -49,6 +51,7 @@
               mainProgram = "cli-proxy-api";
             };
           };
-        });
+        }
+      );
     };
 }
