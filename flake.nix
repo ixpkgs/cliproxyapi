@@ -17,9 +17,9 @@
         system:
         let
           pkgs = nixpkgs.legacyPackages.${system};
-          tag = "v5.1.29";
-          version = "5.1.29";
-          commit = "172f282e9efaed80163742ae6418ddeb7de0052f";
+          tag = "v5.2.0";
+          version = "5.2.0";
+          commit = "c0fbc1979e44c9eef1816fd80c425f75afe9b86a";
         in
         {
           default = pkgs.buildGoModule {
