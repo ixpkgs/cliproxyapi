@@ -17,9 +17,9 @@
         system:
         let
           pkgs = nixpkgs.legacyPackages.${system};
-          tag = "v7.1.19";
-          version = "7.1.19";
-          commit = "21fad9dbb447a2ab70d51d0ac3e3d032525a6054";
+          tag = "v7.1.20";
+          version = "7.1.20";
+          commit = "aaec9194d54946fc89a97a2c888e9400470c3d97";
         in
         {
           default = pkgs.buildGoModule {
@@ -30,11 +30,6 @@
               url = "https://github.com/router-for-me/CLIProxyAPI";
               rev = commit;
             };
-
-            postPatch = pkgs.lib.optionalString (version == "7.1.19") ''
-              substituteInPlace sdk/cliproxy/auth/request_auth_prepare_test.go \
-                --replace-fail "/CLIProxyAPI/v6/" "/CLIProxyAPI/v7/"
-            '';
 
             vendorHash = "sha256-AIue9XBsfsKGClRLB1DCME+36crapnOdQrEICFYG1a0=";
             subPackages = [ "cmd/server" ];
