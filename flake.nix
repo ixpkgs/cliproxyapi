@@ -17,8 +17,8 @@
         system:
         let
           pkgs = nixpkgs.legacyPackages.${system};
-          tag = "v6.6.109";
-          version = "6.6.109";
+          tag = "v6.6.109-dev";
+          version = "6.6.109-dev";
           commit = "7248f65c36b5c2dedc336a75057925245113c979";
         in
         {
